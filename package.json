@@ -8,6 +8,7 @@
   "scripts": {
     "build": "webpack --optimize-minimize",
     "dev": "webpack --progress --colors --watch"
+    "start": "node app.js"
   },
   "author": "Sandesh",
   "license": "MIT",
