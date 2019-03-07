@@ -25,28 +25,28 @@
 
 <form class="pure-form">
 	<h1>WheelPicker</h1>
-	<p>仿 iOS UIPickerView 的滚动选择器</p>
+	<p>By Sandesh Bagade</p>
 
 	<div>
-		<h3>单列</h3>
-		<a href="javascript:;" id="demo1">显示</a>
+		
+		<a href="javascript:;" id="demo1">1st</a>
 	</div>
 
 	<div class="div">
-		<h3><label for="demo2">两列带默认值</label></h3>
+		<h3><label for="demo2">2nd</label></h3>
 		<input type="text" id="demo2">
 	</div>
 
 	<div class="div">
-		<h3><label for="demo3">城市联动</label></h3>
-		<input type="text" id="demo3" placeholder="点击选择">
+		<h3><label for="demo3">3rd</label></h3>
+		<input type="text" id="demo3" placeholder="3rd">
 	</div>
 </form>
 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
 <script src="./dist/wheelpicker.min.js"></script>
 <script>
-var frutis = "西瓜,柠檬,草莓,荔枝,橘子,菠萝,香蕉,柚子,苹果,龙眼".split(",");
+var frutis = "1,2,3,4,5,6,7,8,9,0".split(",");
 var frutisEn = "watermelon,lemon,strawberry,litchi,orange,pineapple,banana,grapefruit,apple,longan".split(",");
 var frutiData = frutis.map(function(name, idx) {
     return {
@@ -54,7 +54,7 @@ var frutiData = frutis.map(function(name, idx) {
         value: frutisEn[idx]
     };
 });
-var vegetables = "香菜,青菜,芦笋,萝卜,水芹,黄瓜,冬瓜,番茄,茄子,土豆".split(",");
+var vegetables = "v1,v2,v3,v4,v5,v6,v7,v8,v9,v0".split(",");
 var vegetablesEn = "parsley,celery,asparagus,carrot,celery,cucumber,melon,tomato,eggplant,potato".split(",");
 var vegetableData = vegetables.map(function(name, idx) {
     return {
@@ -64,7 +64,7 @@ var vegetableData = vegetables.map(function(name, idx) {
 });
 
 var picker1 = new WheelPicker({
-    title: "单列选择器",
+    title: "2nd",
     data: [frutis],
     onSelect: function(selected) {
         alert(selected[0].value);
@@ -82,8 +82,8 @@ var picker2 = new WheelPicker({
     value: ["lemon", "carrot"]
 });
 
-fetch("https://cdn.jsdelivr.net/gh/modood/Administrative-divisions-of-China/dist/pca.json")
-    .then(function(response) {
+//fetch("https://cdn.jsdelivr.net/gh/modood/Administrative-divisions-of-China/dist/pca.json")
+fetch("api.json").then(function(response) {
         return response.json();
     })
     .then(function(data) {
